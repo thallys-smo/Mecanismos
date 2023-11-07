@@ -226,6 +226,7 @@ plt.plot(t, a_B_cruza)
 plt.xlabel('t')
 plt.ylabel('Aceleração Linear do Ponto B - Circuito Cruzado')
 plt.suptitle('Velocidades e Acelerações Lineares dos pontos A e B')
+
 plt.show()
 
 
