@@ -3,7 +3,7 @@
 clear;
 beta = pi/3;
 h = 1;
-t = 0:0.001:6.001;
+t = 0:0.001:6;
 theta = pi/3 * t;
 
 % Equacionamento
@@ -21,15 +21,15 @@ j = [j, j_theta];
 end
 
 % Vetores
-N= 94;
-delta_t1 = 3-N/60;
-delta_t2 = 1+N/60;
-disp(delta_t1);
-disp(delta_t2)
-t1 = 0:(delta_t1/1000):delta_t1;     % Repouso incial
-t2 = delta_t1:(delta_t2/1000):4; % Subida
-t3 = 4:0.001:5;                  % Repouso intermediario
-t4 = 5:0.001:6;                  % Descida
+N= 27;
+delta = [3-N/60, 1+N/60];
+disp(delta(1));
+disp(delta(2));
+
+t1 = linspace(0, delta(1),1001); % Repouso incial
+t2 = linspace(delta(1), 4,1001); % Subida
+t3 = linspace(4, 5,1001); % Repouso intermediario
+t4 = linspace(5, 6,1001); % Descida
 
 % Repouso / subida / repouso / descida (inverso da subida − flip)
 s_vetor = [zeros(size(t1)), s, ones(size(t1)), flip(s)];
@@ -89,13 +89,16 @@ j = [j, j_theta];
 end
 
 % Vetores
-N= 0;
-delta_t1 = 3-N/60;
-delta_t2 = 1+N/60;
-t1 = 0:(delta_t1/1000):delta_t1;     % Repouso incial
-t2 = delta_t1:(delta_t2/1000):4; % Subida
-t3 = 4:0.001:5;                  % Repouso intermediario
-t4 = 5:0.001:6;                  % Descida
+% Vetores
+N= 27;
+delta = [3-N/60, 1+N/60];
+disp(delta(1));
+disp(delta(2));
+
+t1 = linspace(0, delta(1),1001); % Repouso incial
+t2 = linspace(delta(1), 4,1001); % Subida
+t3 = linspace(4, 5,1001); % Repouso intermediario
+t4 = linspace(5, 6,1001); % Descida
 
 % Repouso / subida / repouso / descida (inverso da subida − flip)
 s_vetor = [zeros(size(t1)), s, ones(size(t3)), flip(s)];
